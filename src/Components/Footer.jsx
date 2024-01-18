@@ -35,19 +35,19 @@ const Footer = () => {
     <Box className={classes.footer}>
       <span className={classes.name}>
         Inshorts clone made by -{" "}
-        <a className={classes.a} href="https://www.linkedin.com/in/shams-qamar-703a21212" target="__blank">
+        <a className={classes.a} href="https://github.com/ShamsQamar/Inshorts_clone-static" target="__blank">
           Shams Qamar
         </a>
       </span>
       <hr style={{ width: "90%" }} />
       <Box className={classes.iconContainer}>
-        <a className={classes.a} href="https://www.instagram.com/shams.qamar90/" target="__blank">
-          <i className="fab fa-instagram-square fa-2x"></i>
-        </a>
         <a className={classes.a} href="https://www.linkedin.com/in/shams-qamar-703a21212" target="__blank">
           <i className="fab fa-linkedin fa-2x"></i>
         </a>
-        <a className={classes.a} href="https://www.facebook.com/shams.qamar.71" target="__blank">
+        <a className={classes.a} href="https://github.com/ShamsQamar" target="__blank">
+          <i className="fab fa-github-square fa-2x"></i>
+        </a>
+        <a className={classes.a} href="https://www.facebook.com" target="__blank">
           <i className="fab fa-facebook-square fa-2x"></i>
         </a>
       </Box>
