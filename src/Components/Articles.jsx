@@ -31,7 +31,6 @@ const Articles = ({ category }) => {
   const [news, setNews] = useState([]);
   let resultNews = [];
   const [page, setPage] = useState(0);
-  let disable = false;
 
   useEffect(() => {
     newres();
@@ -55,7 +54,6 @@ const Articles = ({ category }) => {
       // console.log('2', resultNews)
       setNews(resultNews);
       // console.log(news)
-      disable = true
     }
   }
 
@@ -89,7 +87,7 @@ const Articles = ({ category }) => {
         {category === 'General' ?
           <Button disabled={news.length === data.length} style={loadMore} onClick={() => setPage(page + 5)} >Load More</Button>
           :
-          <Button disabled={disable = true} style={loadMore} onClick={() => setPage(page + 5)} >Load More</Button>
+          <Button disabled style={loadMore} >Load More</Button>
         }
       </ButtonGroup>
 
