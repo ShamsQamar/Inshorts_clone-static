@@ -2,6 +2,9 @@
   "name": "inshorts-clone",
   "version": "0.1.0",
   "private": true,
+  "overrides": {
+    "mini-css-extract-plugin": "2.4.5"
+  },
   "dependencies": {
     "@material-ui/core": "^4.12.3",
     "@material-ui/icons": "^4.11.2",
