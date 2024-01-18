@@ -13,13 +13,14 @@ import ListItemText from '@material-ui/core/ListItemText';
 import MenuIcon from '@material-ui/icons/Menu';
 
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
   list: {
     width: 200, 
     paddingLeft: 10, 
     paddingRight: 5,
-    background : '#303036',
-    overflow: 'hidden'
+    backgroundColor : '#303036',
+    overflow: 'hidden',
+    height: '100%'
   },
   fullList: {
     width: 'auto',
@@ -31,8 +32,13 @@ const useStyles = makeStyles({
     color: '#fff',
     height: '100vh',
     overflow: 'hidden'
+  },
+  menuicon: {
+    [theme.breakpoints.down('sm')] : {
+      marginLeft : "-25px",
+    }
   }
-});
+}));
 
 const categories = [
   "General",
@@ -100,7 +106,7 @@ export default function SwipeableTemporaryDrawer( {setCategory} ) {
      
         <React.Fragment key={'left'}>
           <Button onClick={toggleDrawer('left', true)}>
-            <MenuIcon/> </Button>
+            <MenuIcon className={classes.menuicon}/> </Button>
           <SwipeableDrawer
             anchor={'left'}
             open={state['left']}

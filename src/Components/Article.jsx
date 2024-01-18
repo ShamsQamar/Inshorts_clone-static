@@ -16,12 +16,12 @@ const useStyles = makeStyles( theme => ({
     display : 'flex',
     flexDirection : 'column',
     [theme.breakpoints.down('sm')] : {
-      margin : "5px 0"
+      margin : "5px 0",
     }
  },
   image : {
-     height : 268,
-     width : 320,
+     height : 235,
+     width : 290,
      borderRadius : 4
   },
   title : {
@@ -56,15 +56,14 @@ const useStyles = makeStyles( theme => ({
 
 const Article = ({ article } ) => {
   const classes = useStyles();
-  const time = new Date().toTimeString();
    return (
      <Card className={classes.component}>
        <CardContent className={classes.container}>
           <Grid container>
-            <Grid item lg={5} md={5} sm={5} xs={12} >
+            <Grid item lg={5} md={6} sm={8} xs={7}>
               <img src={article.url} alt="articeImage" className={classes.image}/>
             </Grid>
-              <Grid item lg={7} md={7} sm={7} xs={12} className={classes.rightContainer} >
+              <Grid item lg={7} md={6} sm={13} xs={13} className={classes.rightContainer} >
                 <Typography className={classes.title}>{article.title}</Typography>
                <Typography className={classes.author}>
                  <b>short</b> by {article.author} / on {article.timestamp}

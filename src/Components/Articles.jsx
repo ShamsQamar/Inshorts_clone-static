@@ -3,31 +3,37 @@ import { useEffect, useState } from 'react';
 // import InfiniteScroll from 'react-infinite-scroll-component';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
 import Button from '@material-ui/core/Button';
-
 import Article from './Article';
 import { data } from '../Data/data.js';
+import { makeStyles } from '@material-ui/core';
 
-const loadMore = {
-  cursor: 'pointer',
-  boxShadow: '0 3px 8px 0 rgb(0 0 0 / 17%), 0 3px 11px 0 rgb(0 0 0 / 18%)',
-  border: 'none',
-  backgroundColor: 'white',
-  fontSize: '15px',
-  width: '130px',
-  marginLeft: '380px',
-  borderRadius: '3px',
-  marginTop: '17px',
-  marginBottom: '41px',
-  padding: '6px 10px!important',
-  textAlign: 'center',
-  fontWeight: '400',
-  position: 'relative'
-}
+const useStyles = makeStyles(theme => ({
+  loadMore: {
+    cursor: 'pointer',
+    boxShadow: '0 3px 8px 0 rgb(0 0 0 / 17%), 0 3px 11px 0 rgb(0 0 0 / 18%)',
+    border: 'none',
+    backgroundColor: 'white',
+    fontSize: '15px',
+    width: '130px',
+    marginLeft: '380px',
+    borderRadius: '3px',
+    marginTop: '17px',
+    marginBottom: '41px',
+    padding: '6px 10px!important',
+    textAlign: 'center',
+    fontWeight: '400',
+    position: 'relative',
+    [theme.breakpoints.down('sm')] : {
+      marginLeft : "90px",
+    }
+  }
+}))
+
 
 
 
 const Articles = ({ category }) => {
-
+  const classes = useStyles();
   const [news, setNews] = useState([]);
   let resultNews = [];
   const [page, setPage] = useState(0);
@@ -85,9 +91,9 @@ const Articles = ({ category }) => {
 
       <ButtonGroup disableElevation variant="contained" >
         {category === 'General' ?
-          <Button disabled={news.length === data.length} style={loadMore} onClick={() => setPage(page + 5)} >Load More</Button>
+          <Button disabled={news.length === data.length} className={classes.loadMore} onClick={() => setPage(page + 5)} >Load More</Button>
           :
-          <Button disabled style={loadMore} >Load More</Button>
+          <Button disabled className={classes.loadMore} >Load More</Button>
         }
       </ButtonGroup>
 

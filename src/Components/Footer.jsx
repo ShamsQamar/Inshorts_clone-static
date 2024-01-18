@@ -1,32 +1,40 @@
 import { Box, makeStyles } from '@material-ui/core';
 
-const useStyles = makeStyles({
-  footer : {
+const useStyles = makeStyles(theme => ({
+  footer: {
     backgroundColor: '#222',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
     color: 'white'
   },
-  name : {
+  name: {
     fontSize: '20px',
     padding: '20px 30px 15px',
+    color: 'white',
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '17px',
+      marginTop: '10px'
+    }
+  },
+
+  a: {
     color: 'white'
   },
-  
-  a :{
-    color: 'white'
-  },
-  
-  iconContainer : {
+
+  iconContainer: {
     width: '60%',
     height: '50px',
     padding: '20px 0',
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'space-evenly'
+    justifyContent: 'space-evenly',
+    [theme.breakpoints.down('sm')]: {
+      height: '40px',
+      paddingTop: '4px'
+    }
   }
-})
+}));
 
 const Footer = () => {
   const classes = useStyles();
@@ -39,7 +47,7 @@ const Footer = () => {
           Shams Qamar
         </a>
       </span>
-      <hr style={{ width: "90%" }} />
+      <hr style={{ width: "90%", marginTop: '1px' }} />
       <Box className={classes.iconContainer}>
         <a className={classes.a} href="https://www.linkedin.com/in/shams-qamar-703a21212" target="__blank">
           <i className="fab fa-linkedin fa-2x"></i>
